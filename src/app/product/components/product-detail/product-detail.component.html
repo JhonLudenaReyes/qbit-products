@@ -1,0 +1,25 @@
+<p-card
+  header=" {{ product.name | titlecase }} "
+  subheader="Precio: ${{ product.price | number }} "
+  [style]="{ width: '360px', margin: '1.5rem' }"
+>
+  <ng-template pTemplate="header">
+    <img
+      alt="Card"
+      src="https://primefaces.org/cdn/primeng/images/usercard.png"
+    />
+  </ng-template>
+  <p>
+    <b>Descripcion del producto: </b>
+    {{ product.description | titlecase }}
+  </p>
+
+  <b> Stock: {{ product.stock }} </b>
+  <ng-template pTemplate="footer">
+    <p-button
+      label="Volver"
+      icon="pi pi-arrow-left"
+      (onClick)="backProductList()"
+    ></p-button>
+  </ng-template>
+</p-card>
